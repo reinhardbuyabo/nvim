@@ -11,7 +11,7 @@ return {
         null_ls.builtins.formatting.stylua,
         -- JAVASCRIPT
         null_ls.builtins.formatting.prettier,
-        require("none-ls.diagnostics.eslint_d"),
+        -- require("none-ls.diagnostics.eslint_d"),
         -- C++
         require("none-ls.diagnostics.cpplint"),
         null_ls.builtins.formatting.clang_format,

@@ -35,7 +35,7 @@ return {
       vim.keymap.set('n', '<leader>vrn', vim.lsp.buf.rename, {})
       vim.keymap.set('n', '<leader>vws', vim.lsp.buf.workspace_symbol, {})
       vim.keymap.set('n', '<leader>vd', vim.diagnostic.open_float, {})
-      vim.keymap.set('n', '<C-h>', vim.lsp.buf.signature_help, {})
+      -- vim.keymap.set('n', '<C-h>', vim.lsp.buf.signature_help, {})
 
     end
   }
