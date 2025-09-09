@@ -1,36 +1,23 @@
 return {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    config = function()
-        require("copilot").setup({
-            panel = {
-                enabled = true,
-                auto_refresh = true,
-                keymap = {
-                    jump_prev = "[[",
-                    jump_next = "]]",
-                    accept = "<CR>",
-                    refresh = "gr",
-                    open = "<M-CR>",
-                },
-            },
-            suggestion = {
-                enabled = false,
-            },
-            filetypes = {
-                yaml = true,
-                markdown = true,
-                gitcommit = true,
-                gitrebase = true,
-                help = false,
-                hgcommit = false,
-                svn = false,
-                cvs = false,
-                ["."] = false,
-            },
-            copilot_node_command = "node", -- Node.js >= 18.x required
-            server_opts_overrides = {},
-        })
-    end,
+  "zbirenbaum/copilot.lua",
+  cmd = "Copilot",
+  event = "InsertEnter",
+  config = function()
+    require("copilot").setup({
+      suggestion = {
+        enabled = true,
+        auto_trigger = true, -- inline ghost text shows up automatically
+        debounce = 75,
+        keymap = {
+          accept = "<Tab>",        -- default accept
+          accept_word = "<M-w>",   -- default word
+          accept_line = "<M-l>",   -- default line
+          next = "<M-]>",          -- default cycle forward
+          prev = "<M-[>",          -- default cycle backward
+          dismiss = "<C-]>",       -- default dismiss
+        },
+      },
+      panel = { enabled = false },
+    })
+  end,
 }

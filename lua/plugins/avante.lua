@@ -24,8 +24,8 @@ return {
     },
 
     behaviour = {
-      auto_suggestions = true, -- Copilot is designed for suggestions
-      auto_set_keymaps = true,
+      auto_suggestions = false, -- Copilot is designed for suggestions
+      auto_set_keymaps = false,
     },
 
     suggestion = {
@@ -46,4 +46,3 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
 }
-
