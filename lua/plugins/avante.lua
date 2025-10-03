@@ -25,7 +25,7 @@ return {
 
     behaviour = {
       auto_suggestions = false, -- Copilot is designed for suggestions
-      auto_set_keymaps = false,
+      auto_set_keymaps = true,
     },
 
     suggestion = {
