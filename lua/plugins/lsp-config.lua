@@ -12,7 +12,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "ts_ls", "html" },
+				ensure_installed = {},
 			})
 		end,
 	},
@@ -39,24 +39,6 @@ return {
 						workspace = { checkThirdParty = false },
 					},
 				},
-			})
-
-			vim.lsp.start({
-				name = "ts_ls",
-				cmd = { "typescript-language-server", "--stdio" },
-				capabilities = capabilities,
-				filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact" },
-				root_dir = vim.fs.dirname(
-					vim.fs.find({ "tsconfig.json", "package.json", ".git" }, { upward = true })[1]
-				),
-			})
-
-			vim.lsp.start({
-				name = "html",
-				cmd = { "vscode-html-language-server", "--stdio" },
-				capabilities = capabilities,
-				filetypes = { "html" },
-				root_dir = vim.fs.dirname(vim.fs.find({ ".git", "index.html" }, { upward = true })[1]),
 			})
 
 			-- Global LSP keymaps
