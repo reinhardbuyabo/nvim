@@ -1,8 +1,12 @@
 return {
 	{
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.8",
-		dependencies = { "nvim-lua/plenary.nvim" },
+		version = "*",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			-- optional but recommended
+			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+		},
 		config = function()
 			local builtin = require("telescope.builtin")
 			vim.keymap.set("n", "<C-p>", builtin.find_files, {})
@@ -53,10 +57,10 @@ return {
 						-- tmux_resize_open_pane = 30 -- Example of number of columns to open the tmux pane.
 					},
 				},
-        backend = "terminal",
-        previewer = function(filepath)
-        vim.fn.jobstart({ "fim", filepath }, { detach = true })
-      end
+				backend = "terminal",
+				previewer = function(filepath)
+					vim.fn.jobstart({ "fim", filepath }, { detach = true })
+				end,
 			})
 			local telescope = require("telescope")
 
